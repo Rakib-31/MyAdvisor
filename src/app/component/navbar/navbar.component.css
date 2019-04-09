@@ -1,0 +1,56 @@
+
+input{
+    width: 40%;
+    
+}
+
+#box{
+    margin-left: 15%;
+    background: whitesmoke;
+}
+
+.back{
+    background: green;
+    color: white;
+}
+
+.navbar-brad{
+    color: rgb(7, 99, 173);
+    font-size: 35px;
+    font-family: cursive;
+    text-decoration: none;
+}
+
+.pos a:hover{
+    color: blue;
+}
+
+.pos{
+    position: relative;
+    
+    text-align: right;
+
+    background: gainsboro;
+    position: relative;
+    min-width: 1006px;
+    height: 25px;
+
+    transition: height .25s linear,zIndex 0s linear .25s;
+    transition-property: height, zIndex;
+    transition-duration: 0.25s, 0s;
+    transition-timing-function: linear, linear;
+    transition-delay: 0s, 0.25s;
+    z-index: 310;
+}
+
+.pos a{
+    margin: 10px;
+}
+
+a{
+    color: black;
+}
+
+.inlinediv{
+    display: inline;
+}
