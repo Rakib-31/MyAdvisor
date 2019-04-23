@@ -4,6 +4,10 @@ input{
     
 }
 
+.navback{
+    background: hotpink;
+}
+
 #box{
     margin-left: 15%;
     background: whitesmoke;
@@ -32,7 +36,7 @@ input{
 
     background: gainsboro;
     position: relative;
-    min-width: 1006px;
+    
     height: 25px;
 
     transition: height .25s linear,zIndex 0s linear .25s;
@@ -52,5 +56,5 @@ a{
 }
 
 .inlinediv{
-    display: inline;
+    cursor: pointer;
 }

@@ -1,26 +1,79 @@
-<form class="container">
-  <div class="form-group">
-    <label for="firstname">First Name</label>
-    <input type="text" id="firstname" class="form-control">
-  </div>
 
-  <div class="form-group">
-    <label for="lastname">Last Name</label>
-    <input type="text" id="lastname" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="email">Last Name</label>
-    <input type="email" id="email" class="form-control">
-  </div>
-  <div class="form-group">
-    <label for="password">Last Name</label>
-    <input type="pass" id="password" class="form-control">
-  </div>
+<form #f="ngForm" (ngSubmit)="save(f.value)" class="container minus">
 
-  <button (click)="logout()">SIGN UP</button>
+  <h4>Create your advisor account</h4>
 
-  <p>or login with</p>
+  <div class="row">
+    <div class="col-md-3 back">
+    
+      <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input #firstname="ngModel" ngModel name="firstname" type="text" id="firstname" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="firstname.touched && firstname.invalid">
+          First name is required
+        </div>
+      </div>
+
+      
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input #email="ngModel" ngModel name="email" type="email" id="email" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+          E-mail is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input #password="ngModel" ngModel name="password" type="pass" id="password" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+          Password is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="passwordcon">Confirm Password</label>
+        <input #passwordcon="ngModel" ngModel name="passwordcon" type="pass" id="passwordcon" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="passwordcon.touched && passwordcon.invalid">
+          Password does not matched
+        </div>
+      </div>
+
+      <button class="btn btn-primary">SIGN UP</button>
+
+      <p>or login with</p>
+      <button class="btn btn-back" (click)="login()">Google</button>
+  
+    </div>
+    <div class="col-md-3 back">
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input #lastname="ngModel" ngModel name="lastname" type="text" id="lastname" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="lastname.touched && lastname.invalid">
+          Last name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input #phone="ngModel" ngModel name="phone" type="phone" id="phone" class="form-control" required>
+        <div class="alert alert-danger" *ngIf="phone.touched && phone.invalid">
+          Phone number is required
+        </div>
+      </div>
+
+      <div class="gren">
+        <div class="card" style="width: 20 rem;">
+          <img *ngIf="check" class="card-img-top" [src]="selectedFile.name">
+        </div>
+      </div>
+
+      <div class="custom-file">
+        <input type="file" id="pictureset" (change)="onFileSelected($event)">  
+        <button type="button" id="custom-button" (click)="onUpload()">Choose a photo</button>
+        <span id="text-span">No file chosen</span> 
+      </div>
+
+    </div>
+  </div>
 </form>
-
-<button class="btn btn-primary" (click)="login()">Google</button>
 

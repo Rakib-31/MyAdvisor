@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from '../environments/environment.prod';
+import { FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AngularFireModule } from 'angularfire2';
@@ -31,6 +33,8 @@ import { HomeComponent } from './component/home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
